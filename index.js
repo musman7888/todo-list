@@ -1,4 +1,4 @@
-#! usr/bin/env node
+#! /usr/bin/env node
 import inquirer from "inquirer";
 let todoList = [];
 // function to add item in list
@@ -26,6 +26,7 @@ let updateIt = async () => {
             choices: ["Index", "Value"]
         }
     ]);
+    // update by 
     switch (update.option) {
         case "Index":
             let updateIndex = await inquirer.prompt([
@@ -48,7 +49,7 @@ let updateIt = async () => {
                 {
                     name: "valueOld",
                     message: "Enter old value: ",
-                    type: "input",
+                    type: "input"
                 },
                 {
                     name: "valueNew",
@@ -99,7 +100,7 @@ let deleteIt = async () => {
 };
 let terminate = async (performedOperation) => {
     if (performedOperation != "") {
-        console.log(`Item has been ${performedOperation}`);
+        console.log(`Item has been ${performedOperation} successfully!`);
     }
     let confirm = await inquirer.prompt([
         {
